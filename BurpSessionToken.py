@@ -23,7 +23,7 @@ class BurpExtender(IBurpExtender, ISessionHandlingAction):
         self._callbacks.registerSessionHandlingAction(self)    
         self.stdout = PrintWriter(self._callbacks.getStdout(), True)
         self.stdout.println(self.NAME + "\n")
-        self.stdout.println('Registered at time : {:%Y-%m-%d %H:%M:%S}'.format(datetime.datetime.now()))
+        self.stdout.println('Registered: {:%Y-%m-%d %H:%M:%S}'.format(datetime.datetime.now()))
         self.stdout.println("-----------------------------------------------------------------\n\n")
         return
     
@@ -46,9 +46,9 @@ class BurpExtender(IBurpExtender, ISessionHandlingAction):
 
         req_headers.add(self.AUTHORIZE_HEADER + ": " + bearer_token)
         
-        self.stdout.println('Header Checked at time :  {:%Y-%m-%d %H:%M:%S}'.format(datetime.datetime.now()))        
+        self.stdout.println('Header Checked:  {:%Y-%m-%d %H:%M:%S}'.format(datetime.datetime.now()))
         self.stdout.println("-----------------------------------------------------------------")
-        self.stdout.println("Adding new header - " + self.AUTHORIZE_HEADER + ": " + bearer_token)
+        self.stdout.println("Added new header - " + self.AUTHORIZE_HEADER + ": " + bearer_token)
         self.stdout.println("-----------------------------------------------------------------")                
 
         # Build request with bypass headers        
