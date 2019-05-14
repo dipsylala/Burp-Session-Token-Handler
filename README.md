@@ -1,4 +1,4 @@
-# BurpSession-Token
+# Burp Session-Token Handler extension
 
 Originally from https://www.twelvesec.com/2017/05/05/authorization-token-manipulation/
 Updated to be a little more SOLID.
