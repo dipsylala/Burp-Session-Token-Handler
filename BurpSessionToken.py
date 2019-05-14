@@ -59,15 +59,16 @@ class BurpExtender(IBurpExtender, ISessionHandlingAction):
 
     def removeTokenFromHeaders(self, req_headers, authorize_header):
         # Remove the x-access-token header if it exists
-        # Don't escape in case something's broken and 2 auth headers exist
         for head in req_headers:
             if authorize_header in head:
                 auth_header_to_delete = head
-                try:
-                    req_headers.remove(auth_header_to_delete)
-                    self.stdout.println("Token header removed")
-                except:
-                    pass
+                break
+            
+        try:
+            req_headers.remove(auth_header_to_delete)
+            self.stdout.println("Token header removed")
+        except:
+            pass
 
     def extractTokenFromResponse(self, macro_items):
 
