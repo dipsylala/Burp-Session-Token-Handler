@@ -7,3 +7,11 @@ Retrieves a 'token' value from JSON response and uses that in ensuing x-access-t
 
 See the instructions at twelvesec or https://www.gracefulsecurity.com/burp-macros-re-authentication/ for how to integrate it into your session checking
 
+## Configuration
+![Session Handling Rules](images/1.SessionHandlingRules.png)
+
+![Session Handling Rules Editor](images/2.SessionHandlingRulesEditor.png)
+
+![Session Handling Action Editor](images/3.SessionHandlingActionEdiitor-1.png)
+
+![Session Handling Action Editor](images/4.SessionHandlingActionEdiitor-2.png)
